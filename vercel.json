@@ -2,6 +2,7 @@
   "buildCommand": "npm install && npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "framework": null
+  "framework": "nextjs",
+  "outputDirectory": ".next"
 }
 
