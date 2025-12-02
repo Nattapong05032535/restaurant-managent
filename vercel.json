@@ -1,7 +1,7 @@
 {
-  "buildCommand": "cd ui && pnpm install && pnpm build",
-  "devCommand": "cd ui && pnpm dev",
-  "installCommand": "cd ui && pnpm install",
+  "buildCommand": "cd ui && npm install && npm run build",
+  "devCommand": "cd ui && npm run dev",
+  "installCommand": "cd ui && npm install",
   "framework": null
 }
 
