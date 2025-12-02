@@ -2,7 +2,6 @@
   "buildCommand": "cd ui && pnpm install && pnpm build",
   "devCommand": "cd ui && pnpm dev",
   "installCommand": "cd ui && pnpm install",
-  "framework": null,
-  "rootDirectory": "ui"
+  "framework": null
 }
 
