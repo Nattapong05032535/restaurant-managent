@@ -1,7 +1,7 @@
 {
-  "buildCommand": "cd ui && npm install && npm run build",
-  "devCommand": "cd ui && npm run dev",
-  "installCommand": "cd ui && npm install",
+  "buildCommand": "npm install && npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
   "framework": null
 }
 
