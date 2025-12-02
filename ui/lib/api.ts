@@ -1,9 +1,8 @@
 import axios from 'axios';
 
-// สำหรับ production จะใช้ relative path, สำหรับ development ใช้ localhost
-const API_URL = typeof window !== 'undefined' 
-  ? '' // ใช้ relative path เมื่ออยู่ใน browser
-  : (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001');
+// ใช้ Next.js API Routes เท่านั้น (browser และ server-side)
+// สำหรับ Next.js API Routes ใช้ relative path ได้เสมอ
+const API_URL = '';
 
 const api = axios.create({
   baseURL: API_URL,
