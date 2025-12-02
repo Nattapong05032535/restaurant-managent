@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: restaurant-api-dev
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - GOOGLE_SERVICE_ACCOUNT_EMAIL=${GOOGLE_SERVICE_ACCOUNT_EMAIL}
+      - GOOGLE_PRIVATE_KEY=${GOOGLE_PRIVATE_KEY}
+      - GOOGLE_SPREADSHEET_ID=${GOOGLE_SPREADSHEET_ID}
+    volumes:
+      - ./api:/app
+      - /app/node_modules
+    command: pnpm run dev
+    restart: unless-stopped
+
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    container_name: restaurant-ui-dev
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:3001
+    volumes:
+      - ./ui:/app
+      - /app/node_modules
+      - /app/.next
+    command: pnpm run dev
+    depends_on:
+      - api
+    restart: unless-stopped
+
